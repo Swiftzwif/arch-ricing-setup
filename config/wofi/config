@@ -1,0 +1,155 @@
+# Wofi Configuration File
+# Ultimate Ricing Setup for Arch Linux
+# Tokyo Night Theme Application Launcher
+
+# =================================
+# DISPLAY SETTINGS
+# =================================
+
+# Window width and height
+width=600
+height=400
+
+# Window location (center, top_left, top_right, bottom_left, bottom_right)
+location=center
+
+# Show applications from all categories
+show=drun
+
+# Prompt text
+prompt=Launch Application
+
+# =================================
+# BEHAVIOR SETTINGS
+# =================================
+
+# Allow markup in text
+allow_markup=true
+
+# Allow images
+allow_images=true
+
+# Image size
+image_size=32
+
+# Display mode (list or grid)
+display_mode=list
+
+# Enable multi-select mode
+multi_select=false
+
+# Insensitive search (case insensitive)
+insensitive=true
+
+# Parse action
+parse_action=true
+
+# Hide scroll bars
+hide_scroll=false
+
+# Print command instead of executing
+print_command=false
+
+# Layer (background, bottom, top, overlay)
+layer=top
+
+# =================================
+# APPEARANCE SETTINGS
+# =================================
+
+# Number of columns (only for grid mode)
+columns=2
+
+# Orientation (horizontal or vertical)
+orientation=vertical
+
+# Halign (fill, start, end, center)
+halign=fill
+
+# Content halign (fill, start, end, center)
+content_halign=fill
+
+# Valign (fill, start, end, center)
+valign=start
+
+# Enable gtk layer shell
+gtk_dark=true
+
+# =================================
+# PERFORMANCE SETTINGS
+# =================================
+
+# Enable exec search
+exec_search=false
+
+# Hide search bar
+hide_search=false
+
+# Search delay in milliseconds
+search_delay=100
+
+# =================================
+# KEYBOARD SETTINGS
+# =================================
+
+# Key bindings can be set in CSS or via command line
+# Common key bindings:
+# - Enter: Execute selected item
+# - Escape: Close wofi
+# - Tab: Complete current text
+# - Up/Down: Navigate list
+# - Page Up/Down: Navigate pages
+
+# Normal window (not urgent)
+urgent=false
+
+# =================================
+# MATCHING SETTINGS
+# =================================
+
+# Matching algorithm (contains, fuzzy)
+matching=fuzzy
+
+# Sort order (default, alphabetical, priority)
+sort_order=default
+
+# =================================
+# OUTPUT SETTINGS
+# =================================
+
+# No actions (disable actions)
+no_actions=false
+
+# Cache file location
+cache_file=/tmp/wofi-cache
+
+# =================================
+# ADVANCED SETTINGS
+# =================================
+
+# Fork on startup
+fork=false
+
+# Password character (for password mode)
+password=false
+
+# Monitor to display on (-1 for current monitor)
+monitor=-1
+
+# Run command on selection
+run_shell_command=true
+
+# Allow tab completion
+tab_complete=true
+
+# Lines to display
+lines=15
+
+# Filter rate limit in milliseconds
+filter_rate_limit=100
+
+# Key repeat delay
+key_repeat_delay=500
+
+# Key repeat rate
+key_repeat_rate=25

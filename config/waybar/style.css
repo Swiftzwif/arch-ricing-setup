@@ -1,0 +1,459 @@
+/* Waybar CSS Styling - Tokyo Night Theme */
+/* Ultimate Ricing Setup for Arch Linux */
+
+/* =================================
+   GLOBAL STYLES
+   ================================= */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Fira Code Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* =================================
+   MAIN WINDOW
+   ================================= */
+
+window#waybar {
+    background: rgba(26, 27, 38, 0.95);
+    border: 2px solid rgba(122, 162, 247, 0.8);
+    border-radius: 16px;
+    color: #c0caf5;
+    transition: all 0.3s cubic-bezier(0.55, 0.0, 0.1, 1.0);
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* =================================
+   TOOLTIP STYLES
+   ================================= */
+
+tooltip {
+    background: rgba(26, 27, 38, 0.95);
+    border: 2px solid rgba(122, 162, 247, 0.8);
+    border-radius: 12px;
+    color: #c0caf5;
+    padding: 8px 12px;
+    margin: 8px;
+}
+
+tooltip label {
+    color: #c0caf5;
+    font-weight: 600;
+}
+
+/* =================================
+   MODULE BASE STYLES
+   ================================= */
+
+.module {
+    background: rgba(41, 46, 68, 0.8);
+    margin: 4px 2px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.55, 0.0, 0.1, 1.0);
+}
+
+.module:hover {
+    background: rgba(65, 72, 104, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(122, 162, 247, 0.3);
+}
+
+/* =================================
+   LEFT MODULES
+   ================================= */
+
+#custom-launcher {
+    background: linear-gradient(135deg, #7aa2f7, #bb9af7);
+    color: #1a1b26;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-right: 8px;
+    padding: 6px 14px;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+#custom-launcher:hover {
+    background: linear-gradient(135deg, #bb9af7, #7aa2f7);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(122, 162, 247, 0.5);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(122, 162, 247, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(122, 162, 247, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(122, 162, 247, 0); }
+}
+
+#workspaces {
+    background: rgba(41, 46, 68, 0.8);
+    border-radius: 12px;
+    margin: 4px 8px;
+    padding: 2px 4px;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #565f89;
+    border-radius: 8px;
+    margin: 2px;
+    padding: 4px 8px;
+    transition: all 0.2s cubic-bezier(0.55, 0.0, 0.1, 1.0);
+    font-size: 14px;
+}
+
+#workspaces button:hover {
+    background: rgba(122, 162, 247, 0.2);
+    color: #7aa2f7;
+    transform: scale(1.1);
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, #7aa2f7, #bb9af7);
+    color: #1a1b26;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(122, 162, 247, 0.4);
+}
+
+#workspaces button.urgent {
+    background: linear-gradient(135deg, #f7768e, #ff9e64);
+    color: #1a1b26;
+    animation: urgent 1s ease-in-out infinite;
+}
+
+@keyframes urgent {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+#window {
+    background: rgba(41, 46, 68, 0.8);
+    color: #c0caf5;
+    border-radius: 12px;
+    margin: 4px 8px;
+    padding: 6px 12px;
+    font-weight: 600;
+}
+
+#window.empty {
+    background: transparent;
+}
+
+/* =================================
+   CENTER MODULES
+   ================================= */
+
+#clock {
+    background: linear-gradient(135deg, #9ece6a, #73daca);
+    color: #1a1b26;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 4px 8px;
+    padding: 6px 16px;
+    font-size: 14px;
+}
+
+#clock:hover {
+    background: linear-gradient(135deg, #73daca, #9ece6a);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(158, 206, 106, 0.4);
+}
+
+#custom-weather {
+    background: rgba(41, 46, 68, 0.8);
+    color: #c0caf5;
+    border-radius: 12px;
+    margin: 4px 8px;
+    padding: 6px 12px;
+}
+
+/* =================================
+   RIGHT MODULES
+   ================================= */
+
+#tray {
+    background: rgba(41, 46, 68, 0.8);
+    border-radius: 12px;
+    margin: 4px 8px;
+    padding: 4px 12px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(247, 118, 142, 0.3);
+}
+
+#network {
+    color: #7aa2f7;
+}
+
+#network.disconnected {
+    color: #f7768e;
+    animation: blink 1s linear infinite;
+}
+
+#network.ethernet {
+    color: #9ece6a;
+}
+
+#network.wifi {
+    color: #7aa2f7;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+#bluetooth {
+    color: #bb9af7;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #565f89;
+}
+
+#bluetooth.connected {
+    color: #bb9af7;
+    background: rgba(187, 154, 247, 0.1);
+}
+
+#pulseaudio {
+    color: #f7768e;
+}
+
+#pulseaudio.muted {
+    color: #565f89;
+    background: rgba(86, 95, 137, 0.1);
+}
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #e0af68;
+    animation: charging 2s linear infinite;
+}
+
+#battery.warning:not(.charging) {
+    color: #ff9e64;
+    animation: warning 1s ease-in-out infinite;
+}
+
+#battery.critical:not(.charging) {
+    color: #f7768e;
+    animation: critical 0.5s ease-in-out infinite;
+}
+
+@keyframes charging {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes warning {
+    0%, 100% { color: #ff9e64; }
+    50% { color: #e0af68; }
+}
+
+@keyframes critical {
+    0%, 100% { color: #f7768e; }
+    50% { color: #ff9e64; }
+}
+
+#cpu {
+    color: #7dcfff;
+}
+
+#cpu.warning {
+    color: #e0af68;
+}
+
+#cpu.critical {
+    color: #f7768e;
+    animation: critical 0.5s ease-in-out infinite;
+}
+
+#memory {
+    color: #bb9af7;
+}
+
+#memory.warning {
+    color: #e0af68;
+}
+
+#memory.critical {
+    color: #f7768e;
+    animation: critical 0.5s ease-in-out infinite;
+}
+
+#temperature {
+    color: #73daca;
+}
+
+#temperature.critical {
+    color: #f7768e;
+    animation: temperature-critical 1s ease-in-out infinite;
+}
+
+@keyframes temperature-critical {
+    0%, 100% { 
+        color: #f7768e;
+        transform: scale(1);
+    }
+    50% { 
+        color: #ff9e64;
+        transform: scale(1.1);
+    }
+}
+
+#custom-notification {
+    color: #e0af68;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none {
+    color: #565f89;
+}
+
+#custom-power {
+    background: linear-gradient(135deg, #f7768e, #ff9e64);
+    color: #1a1b26;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-left: 8px;
+    padding: 6px 14px;
+}
+
+#custom-power:hover {
+    background: linear-gradient(135deg, #ff9e64, #f7768e);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(247, 118, 142, 0.4);
+}
+
+#custom-separator {
+    color: rgba(86, 95, 137, 0.5);
+    margin: 0 4px;
+    font-weight: 300;
+}
+
+/* =================================
+   SPECIAL STATES
+   ================================= */
+
+.modules-left {
+    margin-left: 8px;
+}
+
+.modules-center {
+    margin: 0 16px;
+}
+
+.modules-right {
+    margin-right: 8px;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+
+@media (max-width: 1366px) {
+    * {
+        font-size: 12px;
+    }
+    
+    .module {
+        padding: 3px 8px;
+        margin: 3px 1px;
+    }
+    
+    #custom-launcher,
+    #custom-power {
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #custom-separator {
+        display: none;
+    }
+    
+    #workspaces button {
+        padding: 3px 6px;
+    }
+}
+
+/* =================================
+   CUSTOM ANIMATIONS
+   ================================= */
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modules-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.modules-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+.modules-center {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* =================================
+   HOVER EFFECTS
+   ================================= */
+
+.module:not(#custom-launcher):not(#custom-power):not(#clock):hover {
+    background: rgba(65, 72, 104, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 162, 247, 0.2);
+}

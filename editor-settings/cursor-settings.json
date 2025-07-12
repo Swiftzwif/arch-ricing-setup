@@ -1,0 +1,8 @@
+{
+  "theme": "dark",
+  "accentColor": "#4B6EAF",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, monospace",
+  "editor.fontSize": 14,
+  "editor.background": "#181C24",
+  "editor.foreground": "#F5F7FA"
+} 

@@ -1,0 +1,388 @@
+/*******************************************************************************
+ * Rofi Tokyo Night Theme
+ * Ultimate Ricing Setup for Arch Linux
+ *******************************************************************************/
+
+/* =================================
+   COLOR DEFINITIONS
+   ================================= */
+
+* {
+    /* Tokyo Night Color Palette */
+    bg0:    #1a1b26;
+    bg1:    #1f2335;
+    bg2:    #24283b;
+    bg3:    #414868;
+    
+    fg0:    #c0caf5;
+    fg1:    #a9b1d6;
+    fg2:    #787c99;
+    
+    red:    #f7768e;
+    orange: #ff9e64;
+    yellow: #e0af68;
+    green:  #9ece6a;
+    cyan:   #7dcfff;
+    blue:   #7aa2f7;
+    purple: #bb9af7;
+    
+    /* Element Colors */
+    background-color: @bg0;
+    text-color: @fg0;
+    
+    /* Transparency */
+    background-alpha: rgba(26, 27, 38, 0.95);
+    border-alpha: rgba(122, 162, 247, 0.8);
+    
+    /* Sizes */
+    border-radius: 12px;
+    border-width: 3px;
+    
+    /* Fonts */
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+/* =================================
+   MAIN WINDOW
+   ================================= */
+
+window {
+    transparency: "real";
+    background-color: @background-alpha;
+    border: @border-width solid @border-alpha;
+    border-radius: @border-radius;
+    width: 600px;
+    location: center;
+    anchor: center;
+    x-offset: 0px;
+    y-offset: 0px;
+}
+
+/* =================================
+   MAIN BOX
+   ================================= */
+
+mainbox {
+    background-color: transparent;
+    children: [ "inputbar", "message", "listview" ];
+    spacing: 8px;
+    padding: 16px;
+}
+
+/* =================================
+   INPUT BAR
+   ================================= */
+
+inputbar {
+    background-color: rgba(65, 72, 104, 0.6);
+    border: 2px solid rgba(122, 162, 247, 0.5);
+    border-radius: 10px;
+    padding: 12px 16px;
+    spacing: 8px;
+    children: [ "prompt", "textbox-prompt-sep", "entry", "case-indicator" ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @blue;
+    font: "JetBrainsMono Nerd Font Bold 14";
+}
+
+textbox-prompt-sep {
+    background-color: transparent;
+    text-color: @fg2;
+    str: "│";
+    expand: false;
+    margin: 0px 4px 0px 0px;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg0;
+    placeholder-color: @fg2;
+    placeholder: "Type to search...";
+    cursor: text;
+}
+
+case-indicator {
+    background-color: transparent;
+    text-color: @fg2;
+}
+
+/* =================================
+   LISTVIEW
+   ================================= */
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 10;
+    cycle: true;
+    dynamic: true;
+    scrollbar: true;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 4px;
+    margin: 8px 0px 0px 0px;
+    border: 0px;
+}
+
+/* =================================
+   SCROLLBAR
+   ================================= */
+
+scrollbar {
+    width: 8px;
+    border: 0px;
+    border-radius: 6px;
+    background-color: rgba(65, 72, 104, 0.3);
+    handle-width: 6px;
+    handle-color: @blue;
+    margin: 0px 4px 0px 0px;
+}
+
+/* =================================
+   ELEMENTS
+   ================================= */
+
+element {
+    background-color: rgba(65, 72, 104, 0.4);
+    text-color: @fg1;
+    border: 0px;
+    border-radius: 8px;
+    padding: 10px 12px;
+    spacing: 8px;
+    cursor: pointer;
+}
+
+element normal.normal {
+    background-color: rgba(65, 72, 104, 0.4);
+    text-color: @fg1;
+}
+
+element normal.urgent {
+    background-color: rgba(247, 118, 142, 0.2);
+    text-color: @red;
+    border: 1px solid @red;
+}
+
+element normal.active {
+    background-color: rgba(158, 206, 106, 0.2);
+    text-color: @green;
+    border: 1px solid @green;
+}
+
+element selected.normal {
+    background-color: linear-gradient(135deg, rgba(122, 162, 247, 0.8), rgba(187, 154, 247, 0.6));
+    text-color: @bg0;
+    border: 0px;
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+element selected.urgent {
+    background-color: @red;
+    text-color: @bg0;
+    border: 0px;
+}
+
+element selected.active {
+    background-color: @green;
+    text-color: @bg0;
+    border: 0px;
+}
+
+element alternate.normal {
+    background-color: rgba(65, 72, 104, 0.2);
+    text-color: @fg1;
+}
+
+element alternate.urgent {
+    background-color: rgba(247, 118, 142, 0.1);
+    text-color: @red;
+}
+
+element alternate.active {
+    background-color: rgba(158, 206, 106, 0.1);
+    text-color: @green;
+}
+
+/* =================================
+   ELEMENT TEXT AND ICON
+   ================================= */
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: bold @blue;
+    cursor: inherit;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 24px;
+    cursor: inherit;
+}
+
+/* =================================
+   MESSAGE
+   ================================= */
+
+message {
+    background-color: rgba(65, 72, 104, 0.6);
+    border: 2px solid @orange;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 0px 0px 8px 0px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @orange;
+    highlight: bold @yellow;
+}
+
+/* =================================
+   ERROR MESSAGE
+   ================================= */
+
+error-message {
+    background-color: rgba(247, 118, 142, 0.2);
+    border: 2px solid @red;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* =================================
+   MODE SWITCHER
+   ================================= */
+
+mode-switcher {
+    background-color: transparent;
+    spacing: 4px;
+    margin: 8px 0px 0px 0px;
+}
+
+button {
+    background-color: rgba(65, 72, 104, 0.6);
+    text-color: @fg1;
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+button selected {
+    background-color: @blue;
+    text-color: @bg0;
+    border: 1px solid @blue;
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+/* =================================
+   SIDEBAR
+   ================================= */
+
+sidebar {
+    background-color: transparent;
+    border: 0px;
+    spacing: 4px;
+}
+
+/* =================================
+   ADVANCED STYLING
+   ================================= */
+
+/* Hover effects */
+element:hover {
+    background-color: rgba(122, 162, 247, 0.3) !important;
+    text-color: @blue !important;
+}
+
+/* Focus effects */
+inputbar:focus-within {
+    border-color: @blue;
+    background-color: rgba(65, 72, 104, 0.8);
+}
+
+/* Animation support (if available) */
+* {
+    transition: all 0.2s ease;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+   ================================= */
+
+@media (max-width: 800px) {
+    window {
+        width: 90%;
+        margin: 20px;
+    }
+    
+    listview {
+        lines: 8;
+    }
+    
+    element {
+        padding: 8px 10px;
+    }
+    
+    inputbar {
+        padding: 10px 14px;
+    }
+}
+
+/* =================================
+   ACCESSIBILITY
+   ================================= */
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+    * {
+        border-width: 4px;
+    }
+    
+    element selected.normal {
+        background-color: @blue;
+        text-color: @bg0;
+    }
+    
+    inputbar {
+        border-width: 3px;
+    }
+}
+
+/* =================================
+   CUSTOM CLASSES
+   ================================= */
+
+.urgent {
+    background-color: rgba(247, 118, 142, 0.2);
+    color: @red;
+    border: 1px solid @red;
+}
+
+.active {
+    background-color: rgba(158, 206, 106, 0.2);
+    color: @green;
+    border: 1px solid @green;
+}
+
+.category {
+    background-color: rgba(122, 162, 247, 0.1);
+    color: @blue;
+    font-weight: bold;
+    border-left: 3px solid @blue;
+}
+
+.recent {
+    background-color: rgba(224, 175, 104, 0.1);
+    border-left: 3px solid @yellow;
+}
+
+.favorite {
+    background-color: rgba(187, 154, 247, 0.1);
+    border-left: 3px solid @purple;
+}

@@ -1,0 +1,77 @@
+# i3 config for Swift Arch
+font pango:JetBrainsMono Nerd Font 12
+
+# Colors
+set $bg      #181C24
+set $fg      #F5F7FA
+set $blue    #4B6EAF
+set $pblue   #A3C7F7
+set $white   #F5F7FA
+set $gray    #BFC9D1
+set $cyan    #7FD8F7
+set $pink    #F7BFD8
+
+# Window colors
+client.focused          $blue $blue $white $blue $white
+client.unfocused        $bg $bg $gray $bg $gray
+client.urgent           $pink $pink $white $pink $white
+client.placeholder      $bg $bg $gray $bg $gray
+client.background       $bg
+
+# Keybindings
+set $mod Mod4
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Shift+q kill
+bindsym $mod+f fullscreen toggle
+bindsym $mod+space floating toggle
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+s split h
+bindsym $mod+v split v
+bindsym $mod+r reload
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+p exec ~/scripts/show_cheatsheet.sh
+
+# Screenshot
+bindsym $mod+Print exec flameshot full -p ~/Pictures
+bindsym $mod+Shift+Print exec flameshot gui
+
+# Audio/Media
+bindsym $mod+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+Left exec playerctl previous
+bindsym $mod+Right exec playerctl next
+bindsym $mod+Shift+m exec gnome-system-monitor
+
+# Autostart
+exec --no-startup-id picom
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id ~/scripts/show_cheatsheet.sh 
